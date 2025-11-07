@@ -1,0 +1,121 @@
+.create-invoice-page {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 30px 40px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+/* Page title */
+.create-invoice-page h3 {
+  text-align: center;
+  color: #0078d7;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* Form layout */
+.create-invoice-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Labels and inputs */
+.create-invoice-page label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.create-invoice-page select,
+.create-invoice-page input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.create-invoice-page select:focus,
+.create-invoice-page input[type="number"]:focus {
+  border-color: #0078d7;
+  outline: none;
+}
+
+/* Add item button */
+.create-invoice-page button[type="button"] {
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-invoice-page button[type="button"]:hover {
+  background-color: #005fa3;
+}
+
+/* Remove button inside items */
+.remove-btn {
+  background-color: #dc3545 !important;
+  margin-left: 10px;
+}
+
+.remove-btn:hover {
+  background-color: #a71d2a !important;
+}
+
+/* Each product line */
+.line-item {
+  background-color: #f8f9fb;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.line-item select {
+  flex: 1;
+}
+
+.line-item input {
+  width: 80px;
+}
+
+/* Tax and total section */
+.tax-section,
+.total-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.total-section {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* Submit button */
+.create-invoice-page button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.create-invoice-page button[type="submit"]:hover {
+  background-color: #1e7e34;
+}
