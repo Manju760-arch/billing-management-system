@@ -6,4 +6,3 @@ router.post('/', ctrl.createCustomer);
 router.put('/:id', ctrl.updateCustomer);
 router.delete('/:id', ctrl.deleteCustomer);
 module.exports = router;
-

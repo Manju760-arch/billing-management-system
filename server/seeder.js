@@ -6,7 +6,7 @@ const Product = require('./models/Product');
 const Customer = require('./models/Customer');
 
 (async () => {
-  await connectDB(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/billingdb');
+  await connectDB(process.env.MONGO_URL);
   await Product.deleteMany({});
   await Customer.deleteMany({});
 
@@ -14,7 +14,7 @@ const Customer = require('./models/Customer');
   const p2 = await Product.create({ name: 'Notebook', price: 40, stock: 50 });
   const p3 = await Product.create({ name: 'Pencil', price: 5, stock: 200 });
 
-  const c1 = await Customer.create({ name: 'Manju', phone: '1234567890', email: 'manju@example.com' });
+  const c1 = await Customer.create({ name: 'Bala', phone: '1234567890', email: 'bala@example.com' });
 
   console.log('Seeded');
   process.exit();

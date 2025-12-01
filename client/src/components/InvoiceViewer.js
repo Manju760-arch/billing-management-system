@@ -1,41 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export default function InvoiceViewer({ invoice }) {
-  if (!invoice) return null;
+export default function CustomerForm({ onSubmit }) {
+  const [form, setForm] = useState({ name: '', phone: '', email: '' });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit({ ...form, name: form.name.trim() });
+    setForm({ name: '', phone: '', email: '' });
+  };
+
   return (
-    <div className="card">
-      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-        <div>
-          <h3 style={{ marginBottom:6 }}>Invoice #{invoice._id?.slice(-6)}</h3>
-          <div className="muted">Customer: <strong>{invoice.customer?.name || '—'}</strong></div>
-          <div className="muted">Date: {new Date(invoice.createdAt).toLocaleString()}</div>
-        </div>
-        <div style={{ textAlign:'right' }}>
-          <div style={{ fontSize:18, fontWeight:800 }}>₹{invoice.total}</div>
-          <div className="muted">Tax: {invoice.taxPercent}%</div>
+    <form onSubmit={handleSubmit} className="card">
+      <div className="kicker">Add customer</div>
+      <div style={{ display: 'grid', gap: 10 }}>
+        <input className="input" placeholder="Full name" value={form.name} onChange={e=>setForm({...form, name: e.target.value})} required />
+        <input className="input" placeholder="Phone" value={form.phone} onChange={e=>setForm({...form, phone: e.target.value})} />
+        <input className="input" placeholder="Email" value={form.email} onChange={e=>setForm({...form, email: e.target.value})} />
+        <div style={{ display:'flex', justifyContent:'flex-end' }}>
+          <button className="btn btn-primary" type="submit">Add Customer</button>
         </div>
       </div>
-
-      <table className="table" style={{ marginTop:12 }}>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th style={{width:80}}>Qty</th>
-            <th style={{width:110}}>Unit</th>
-            <th style={{width:110}}>Subtotal</th>
-          </tr>
-        </thead>
-        <tbody>
-          {invoice.items.map((it, i) => (
-            <tr key={i}>
-              <td>{it.name}</td>
-              <td>{it.qty}</td>
-              <td>₹{it.price}</td>
-              <td>₹{it.subtotal}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    </form>
   );
 }

@@ -17,4 +17,3 @@ await Customer.findByIdAndDelete(req.params.id);
 res.json({ message: 'Customer deleted' });
 };
 
-

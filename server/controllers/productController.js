@@ -18,4 +18,3 @@ await Product.findByIdAndDelete(req.params.id);
 res.json({ message: 'Product deleted' });
 };
 
-
