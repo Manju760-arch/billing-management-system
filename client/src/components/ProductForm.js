@@ -1,8 +1,15 @@
 
 import React, { useState, useEffect } from "react";
 
-export default function ProductForm({ onSubmit, initial = null }) {
-  useEffect(() => {
+export default function ProductForm({ initial, onSubmit }) {
+  const [form, setForm] = useState({
+    name: "",
+    price: "",
+    stock: "",
+    sku: "",
+    description: ""
+  });
+   useEffect(() => {
   if (initial) setForm(initial);
 }, [initial]);
  const saving = false;
