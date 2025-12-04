@@ -12,4 +12,6 @@ process.exit(1);
 }
 };
 module.exports = connectDB;
-
+// manjusivaa6634_db_user
+// 0A7T4hvJadUqBMJg
+// mongodb+srv://manjusivaa6634_db_user:0A7T4hvJadUqBMJg@billing.fpvq6cl.mongodb.net/?appName=billing
