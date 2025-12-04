@@ -10,7 +10,7 @@ export default function Products() {
     try {
       setLoading(true);
       // ✅ Use backend URL from Render
-      const res = await api.get('https://billing-management-system-pepk.onrender.com/api/products');
+      const res = await api.get('/products');
       // ✅ Handle if backend sends { products: [...] }
       const data = Array.isArray(res.data) ? res.data : res.data.products || [];
       setProducts(data);

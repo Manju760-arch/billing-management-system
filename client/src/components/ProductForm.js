@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 
 export default function ProductForm({ onSubmit, initial = null }) {
-  const [form, setForm] = useState(initial || { name: '', price: '', stock: '' });
-  const saving = false;
+  useEffect(() => {
+  if (initial) setForm(initial);
+}, [initial]);
+ const saving = false;
 
   const handleSubmit = (e) => {
     e.preventDefault();
